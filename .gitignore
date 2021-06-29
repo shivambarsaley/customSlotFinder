@@ -1,0 +1,4 @@
+.idea
+results/*.json
+node_modules
+*.log
