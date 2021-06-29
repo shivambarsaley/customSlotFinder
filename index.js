@@ -59,5 +59,8 @@ cron.schedule(cronExpression, () => {
     }
     console.log(`Completed slot checking at ${dateFns.format(Date.now(), "dd-MM-yyyy::HH:mm")}`);
     console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
-  }).catch(crashAlert)
+  }).catch(err => {
+    crashAlert(err);
+    throw err;
+  })
 });
